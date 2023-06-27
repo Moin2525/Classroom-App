@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="classroomlogo.png" type="image/x-icon">
+  <title>Classroom App</title>
+  <style>
+    body {
+      background: url("book.jpeg") no-repeat center center/cover;
+      height: 24rem;
+    }
+
+    .box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: whitesmoke;
+      height: 32rem;
+      width: 40rem;
+      border-radius: 2rem;
+      position: absolute;
+      left: 4rem;
+    }
+
+    form {
+      text-align: right;
+    }
+
+    img {
+      height: 5rem;
+      width: 5rem;
+    }
+
+    label {
+      font-weight: bold;
+      font-size: larger;
+    }
+
+    input {
+      border: 2px solid black;
+      border-radius: 6px;
+      height: 2rem;
+      width: 18rem;
+    }
+
+    button{
+      cursor: pointer;
+      font-weight: bold;
+      height: 2.5rem;
+      width: 18.5rem;
+      border-radius: 0.5rem;
+      color: white;
+      background-color: #4169E1;
+    }
+
+    button:hover{
+      background-color:#318CE7;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Update Student Record</h1>
+  <div class="box">
+    <img src="classroomlogo.png" alt="classroomlogo.png">
+    <h1>Give student name to update his/her info</h1>
+    <form action="Update" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Please enter name"><br><br>
+      <div id="name_error" style="display:none; color:red;"></div>
+
+      <label for="email">Updated Email:</label>
+      <input type="email" id="email" name="email" placeholder="Please enter email"><br><br>
+      <div id="email_error" style="display:none; color:red;"></div>
+
+      <label for="password">Updated Password:</label>
+      <input type="password" id="password" name="password" placeholder="Please enter password"><br><br>
+      <div id="password_error" style="display:none; color:red;"></div>
+
+      <label for="conf_password">Updated Confirm Password:</label>
+      <input type="password" id="conf_password" name="conf_password" placeholder="Please re-enter password"><br><br>
+      <div id="conf_password_error" style="display:none; color:red;"></div>
+
+      <button onclick="validate()">Update</button>
+    </form>
+  </div>
+
+  <script>
+    function validate() {
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+      var conf_password = document.getElementById("conf_password").value;
+
+      if (name == "" || email == "" || password == "" || conf_password == "") {
+        if (name == "") {
+          document.getElementById("name_error").style.display = "inline-block";
+          document.getElementById("name_error").innerHTML = "Name is required";
+        }
+        if (email == "") {
+          document.getElementById("email_error").style.display = "inline-block";
+          document.getElementById("email_error").innerHTML = "Email is required";
+        }
+        if (password == "") {
+          document.getElementById("password_error").style.display = "inline-block";
+          document.getElementById("password_error").innerHTML = "Password is required";
+        }
+        if (confirm_password == "") {
+          document.getElementById("conf_password_error").style.display = "inline-block";
+          document.getElementById("conf_password_error").innerHTML = "Confirm Password is required";
+        }
+        event.preventDefault();
+        return false;
+      }
+      if (password != conf_password) {
+        document.getElementById("password_error").style.display = "inline-block";
+        document.getElementById("password_error").innerHTML = "Passwords do not match";
+        document.getElementById("confirm_password_error").style.display = "inline-block";
+        document.getElementById("confirm_password_error").innerHTML = "Passwords do not match";
+        event.preventDefault();
+        return false;
+      }
+      else {
+        return true;
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="classroomlogo.png" type="image/x-icon">
+    <title>Classroom App</title>
+    <style>
+        body {
+            background: url("Admin.jpg") no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        a {
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            background-color: #4169E1;
+            border: 2px solid black;
+            border-radius: 6px;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            width: 6rem;
+            margin: 0.5rem;
+        }
+
+        input {
+            cursor: pointer;
+            border: 2px solid black;
+            border-radius: 6px;
+            color: white;
+            background-color: #4169E1;
+            margin: 0.5rem;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+        a:hover,
+        input:hover {
+            background-color: #318CE7;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to My Classroom App</h1>
+    <h1>This is Admin Portal!</h1>
+    <h1>You have privileges of:</h1>
+
+    <a href="Insert.html">ADD</a>
+    <a href="Update.html">UPDATE</a>
+    <a href="Delete.html">DELETE</a>
+    <a href="Search.html">SEARCH</a>
+
+    <form action="ShowAll" method="post">
+        <input type="submit" value="SHOW ALL STUDENTS DATA">
+    </form>
+
+    <form action="Logout" method="post">
+        <input type="submit" value="LOGOUT">
+    </form>
+</body>
+
+</html>
